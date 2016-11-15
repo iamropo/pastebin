@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var request = require('request')
+var fs = require('fs')
+var copyPaste = require('copy-paste')
+var pastebin = 'http://pastebin.com/api/api_post.php'
+var apiDevKey = 'f99782d8f8dffcf3610daa5efc691c37'
+
+fs.readFile(process.argv[2], 'utf-8', (err, data) => {
+  var formData = {
+	  api_dev_key: apiDevKey,
+	  api_option: 'paste',
+	  api_paste_code: data
+  }
+
+  function pastebinResponse (err, httpResponse, body) {
+	  if (err) {
+	    return console.err('Pasting failed: ', err)
+	  }
+	  console.log('Successfully pasted in pastebin: ' + body)
+	  copyPaste.copy(body, () => {
+	  	console.log('Link copied in your clipboard.')
+	  	process.exit()
+	  })
+  }
+
+  request.post({url: pastebin, formData: formData}, pastebinResponse)
+})
+
