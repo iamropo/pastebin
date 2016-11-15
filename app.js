@@ -5,8 +5,13 @@ var request = require('request')
 var copyPaste = require('copy-paste')
 var pastebin = 'http://pastebin.com/api/api_post.php'
 var apiDevKey = 'f99782d8f8dffcf3610daa5efc691c37'
+var fileName = process.argv[2]
 
-fs.readFile(process.argv[2], 'utf-8', (err, data) => {
+if (!fileName) {
+	return console.error('File name missing.\n Usage: pbin <file name>')
+}
+
+fs.readFile(fileName, 'utf-8', (err, data) => {
   var formData = {
 	  api_dev_key: apiDevKey,
 	  api_option: 'paste',
