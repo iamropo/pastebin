@@ -22,6 +22,9 @@ fs.readFile(fileName, 'utf-8', (err, data) => {
 	  if (err) {
 	    return console.err('Pasting failed: ', err)
 	  }
+	  if (body.indexOf('limit')) {
+	  	return console.log('Reached maximum pastes.\nSorry, pastebin.com limits the number of times you can paste per 24h.')
+	  }
 	  console.log('Successfully pasted in pastebin: ' + body)
 	  copyPaste.copy(body, () => {
 	  	console.log('Link copied in your clipboard.')
