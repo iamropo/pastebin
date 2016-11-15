@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var request = require('request')
 var fs = require('fs')
+var request = require('request')
 var copyPaste = require('copy-paste')
 var pastebin = 'http://pastebin.com/api/api_post.php'
 var apiDevKey = 'f99782d8f8dffcf3610daa5efc691c37'
