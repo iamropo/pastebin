@@ -11,7 +11,9 @@ Replace the folllowing code in app.js:<br>
 `var developerKey = '' // Your dev key goes here` <br>
 `...`<br>
 with your developer key<br>
+`...`
 `var developerKey = '<your developer key from pastebin.com>'`<br>
+`...`<br>
 and then<br>
 `npm link`
 ##Usage
