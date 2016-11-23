@@ -4,7 +4,7 @@ var fs = require('fs')
 var request = require('request')
 var copyPaste = require('copy-paste')
 var pastebin = 'http://pastebin.com/api/api_post.php'
-var apiDevKey = 'f99782d8f8dffcf3610daa5efc691c37'
+var developerKey = '' // Your dev key goes here
 var fileName = process.argv[2]
 
 if (!fileName) {
@@ -13,7 +13,7 @@ if (!fileName) {
 
 fs.readFile(fileName, 'utf-8', (err, data) => {
   var formData = {
-	  api_dev_key: apiDevKey,
+	  api_dev_key: developerKey,
 	  api_option: 'paste',
 	  api_paste_code: data
   }
