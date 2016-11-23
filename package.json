@@ -1,6 +1,6 @@
 {
   "name": "pbin",
-  "version": "1.0.3",
+  "version": "1.1.3",
   "description": "A pastebin.com client built with Node.js",
   "scripts": {
     "test": "node app.js ignore.txt"
