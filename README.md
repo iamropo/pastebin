@@ -1,6 +1,6 @@
-##Developer Key
+## Developer Key
 You can get the developer key, by signing up on pastebin.com
-##Installation
+## Installation
 Clone the repo<br>    
 `git clone git@github.com:iamropo/pbin.git`
 <br>
@@ -16,7 +16,7 @@ with your developer key<br>
 `...`<br>
 and then<br>
 `npm link`
-##Usage
+## Usage
 `pbin filename`<br><br>
 Example<br>
 `pbin hello.txt`
